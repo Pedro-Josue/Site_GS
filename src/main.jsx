@@ -18,10 +18,10 @@ const router =createBrowserRouter([{
   //Elemento Filho
   children:[
     {path:'/',element:<Home/>},
-    {path:'/',element:<Cadastrar/>},
-    {path:'/',element:<Login/>},
-    {path:'/',element:<Sobre/>},
-    {path:'/',element:<Solucao/>},
+    {path:'/cadastrar',element:<Cadastrar/>},
+    {path:'/login',element:<Login/>},
+    {path:'/sobre',element:<Sobre/>},
+    {path:'/solucao',element:<Solucao/>},
   ]
 }])
 

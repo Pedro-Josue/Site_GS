@@ -1,7 +1,7 @@
 const Solucao=()=>{
     return(
         <>
-        
+            <h1>solucao</h1>
         </>
     )
 }
