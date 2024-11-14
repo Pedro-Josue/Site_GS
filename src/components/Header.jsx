@@ -1,7 +1,5 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -15,6 +13,16 @@ const Header = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/sobre">Sobre</Nav.Link>
               <Nav.Link href="/solucao">Solução</Nav.Link>
+            </Nav>
+
+            {/* Adicionando os botões à direita */}
+            <Nav className="ms-auto"> 
+              <Nav.Link href="/login">
+                <Button variant="outline-light">Login</Button>
+              </Nav.Link>
+              <Nav.Link href="/cadastrar">
+                <Button variant="outline-light">Cadastrar</Button>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
