@@ -14,8 +14,6 @@ const Header = () => {
               <Nav.Link href="/sobre">Sobre</Nav.Link>
               <Nav.Link href="/solucao">Solução</Nav.Link>
             </Nav>
-
-            {/* Adicionando os botões à direita */}
             <Nav className="ms-auto"> 
               <Nav.Link href="/login">
                 <Button variant="outline-light">Login</Button>
