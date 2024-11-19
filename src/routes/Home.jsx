@@ -1,5 +1,7 @@
 import { HomeStyle } from "../css/HomeStyle"
 import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 const Home=()=>{
     return(
@@ -44,6 +46,38 @@ const Home=()=>{
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>
+            {/* cards com fotos da solução */}
+            <h2 className="titulo-home">Peças que utilizamos para a solução</h2>
+            <CardGroup className="custom-card-group">
+                <Card className="custom-card">
+                    <Card.Img variant="top" src="src\assets\esp32.jpg" />
+                    <Card.Body>
+                    <Card.Title>ESP32</Card.Title>
+                    <Card.Text>
+                    O ESP32 é um microcontrolador de baixo custo e alta performance desenvolvido pela Espressif Systems, 
+                    amplamente utilizado em projetos de IoT (Internet das Coisas).
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card className="custom-card">
+                    <Card.Img variant="top" src="src\assets\mini-painel.jpg" />
+                    <Card.Body>
+                    <Card.Title>Mini painel solar</Card.Title>
+                    <Card.Text>
+                        painel solar de 3W com 5v, para gerar energia para o esp32 e para a bateria do projeto.
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card className="custom-card">
+                    <Card.Img variant="top" src="src\assets\bateria.jpg" />
+                    <Card.Body>
+                    <Card.Title>Bateria de Litío</Card.Title>
+                    <Card.Text>
+                        Bateria de lítio com vários ciclos, diminuindo a quantidade de vezes que o usuário teria que trocar e descartar uma pilha.
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+            </CardGroup>
         </HomeStyle>
     )
 }
