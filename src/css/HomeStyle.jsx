@@ -7,19 +7,28 @@ export const HomeStyle = styled.section`
         margin-top: 2%;
         margin-bottom: 2%;
     }
-
     .custom-card-group {
-        gap: 1rem;
         margin-bottom: 8%;
     }
-
     .custom-card {
-        max-width: 450px;
+        max-width: 380px;
         margin: 0 auto; 
     }
-
     .custom-card img {
         height: auto;
         max-height: 250px;
+    }
+    .custom-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+    .custom-card-group {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
     }
 `

@@ -78,6 +78,26 @@ const Home=()=>{
                     </Card.Body>
                 </Card>
             </CardGroup>
+            <CardGroup className="custom-card-group">
+                <Card className="custom-card">
+                    <Card.Img variant="top" src="src\assets\protoboard.jpg" />
+                    <Card.Body>
+                    <Card.Title>Protoboard</Card.Title>
+                    <Card.Text>
+                    A protoboard foi utilizada para diminui o uso da solda e para deixar os jumper cables mais organizados no projeto.
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card className="custom-card">
+                    <Card.Img variant="top" src="src\assets\regulador.webp" />
+                    <Card.Body>
+                    <Card.Title>Regulador de tensão</Card.Title>
+                    <Card.Text>
+                        Dispositivo utilizado para trocar a voltagem que vem do painel solar (5V), para 3.3V
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+            </CardGroup>
         </HomeStyle>
     )
 }
