@@ -1,8 +1,9 @@
 import { Card, ListGroup } from 'react-bootstrap';
+import { SobreStyle } from '../css/SobreStyle';
 
 const Sobre=()=>{
     return(
-        <>
+        <SobreStyle>
         <div className="container mt-5">
       {/* Card: Sobre o Projeto */}
       <Card className="mb-4">
@@ -11,7 +12,7 @@ const Sobre=()=>{
           <Card.Text>
             A SolarTech utiliza mini painéis solares para carregar baterias de lítio, oferecendo uma alternativa ecológica ao uso de pilhas descartáveis. Ao usar energia solar, nossa solução visa reduzir o impacto ambiental causado pelo descarte de pilhas e promover uma forma mais sustentável de alimentar dispositivos portáteis.
           </Card.Text>
-          <img src="https://via.placeholder.com/500x300.png?text=Painel+Solar" alt="Painel Solar" className="img-fluid rounded mt-3" />
+          <img src="src\assets\mini-painel-solar.jpg" alt="Painel Solar" className="img-fluid rounded mt-3" />
         </Card.Body>
       </Card>
 
@@ -58,11 +59,11 @@ const Sobre=()=>{
           <Card.Text>
             Nosso objetivo é criar uma alternativa prática e sustentável para reduzir o uso de pilhas e promover um consumo mais consciente. Ao escolher a SolarTech, você participa da construção de um futuro mais verde.
           </Card.Text>
-          <img src="https://via.placeholder.com/500x300.png?text=Visão+Sustentável" alt="Visão Sustentável" className="img-fluid rounded mt-3" />
+          <img src="src\assets\futuro-sustentavel.jpg" alt="Visão Sustentável" className="img-fluid rounded mt-3" />
         </Card.Body>
       </Card>
     </div>
-        </>
+        </SobreStyle>
     )
 }
 
