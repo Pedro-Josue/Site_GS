@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-import CryptoJS from "crypto-js";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
+    const { login } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [credentials, setCredentials] = useState({ email: "", senha: "" });
 
     const handleChange = (e) => {
@@ -19,22 +23,11 @@ const Login = () => {
         );
 
         if (user) {
-            const sessionData = CryptoJS.AES.encrypt(
-                JSON.stringify(user),
-                "chave-secreta"
-            ).toString();
-            sessionStorage.setItem("sessionUser", sessionData);
-
-            alert("Login realizado com sucesso!");
-            // Redirecionar para outra página, se necessário
+            login(user.nome);
+            navigate("/");
         } else {
             alert("Usuário ou senha incorretos!");
         }
-    };
-
-    const handleLogout = () => {
-        sessionStorage.removeItem("sessionUser");
-        alert("Você saiu da sua conta!");
     };
 
     return (
@@ -43,7 +36,7 @@ const Login = () => {
                 <Card.Body>
                     <h3 className="text-center mb-4">Login</h3>
                     <Form onSubmit={handleLogin}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3">
                             <Form.Label>Email</Form.Label>
                             <Form.Control
                                 type="email"
@@ -54,7 +47,7 @@ const Login = () => {
                                 required
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3">
                             <Form.Label>Senha</Form.Label>
                             <Form.Control
                                 type="password"
@@ -69,9 +62,6 @@ const Login = () => {
                             Entrar
                         </Button>
                     </Form>
-                    <Button variant="secondary" onClick={handleLogout} className="w-100 mt-2">
-                        Sair
-                    </Button>
                 </Card.Body>
             </Card>
         </div>

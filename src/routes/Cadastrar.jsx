@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Cadastrar = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +10,8 @@ const Cadastrar = () => {
         senha: "",
         confirmarSenha: "",
     });
+    const navigate = useNavigate();
+    const { login } = useContext(AuthContext); // Acessa o método de login do contexto
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,16 +26,20 @@ const Cadastrar = () => {
             return;
         }
 
+        // Salva o usuário no localStorage
         const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        usuarios.push({
+        const novoUsuario = {
             nome: formData.nome,
             email: formData.email,
             senha: formData.senha, // Idealmente, criptografar essa senha antes de armazenar
-        });
+        };
+        usuarios.push(novoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-        alert("Cadastro realizado com sucesso!");
-        setFormData({ nome: "", email: "", senha: "", confirmarSenha: "" });
+        // Autentica o usuário automaticamente
+        login(formData.nome);
+
+        navigate("/"); // Redireciona para a página inicial
     };
 
     return (

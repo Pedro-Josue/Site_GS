@@ -1,15 +1,17 @@
-import {Outlet} from 'react-router-dom'
-import Nav from './components/Header'
-import Footer from './components/Footer'
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
-    return(
+    return (
         <>
-        <Nav/>
-        <Outlet/>
-        <Footer/>
+            <Header />
+            <main>
+                <Outlet />
+            </main>
+            <Footer />
         </>
-    )
+    );
 }
 
-export default App
+export default App;
