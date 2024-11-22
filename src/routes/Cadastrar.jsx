@@ -3,15 +3,40 @@ import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
+// Função de validação de CPF
+function validarCPF(strCPF) {
+    strCPF = strCPF.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (strCPF.length !== 11 || /^(\d)\1{10}$/.test(strCPF)) return false;
+
+    let soma = 0, resto;
+    for (let i = 1; i <= 9; i++) {
+        soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(strCPF.substring(9, 10))) return false;
+
+    soma = 0;
+    for (let i = 1; i <= 10; i++) {
+        soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(strCPF.substring(10, 11))) return false;
+
+    return true;
+}
+
 const Cadastrar = () => {
     const [formData, setFormData] = useState({
         nome: "",
         email: "",
         senha: "",
         confirmarSenha: "",
+        cpf: "",  // Campo de CPF
     });
     const navigate = useNavigate();
-    const { login } = useContext(AuthContext); // Acessa o método de login do contexto
+    const { login } = useContext(AuthContext);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,12 +51,19 @@ const Cadastrar = () => {
             return;
         }
 
+        // Valida CPF
+        if (!validarCPF(formData.cpf)) {
+            alert("CPF inválido!");
+            return;
+        }
+
         // Salva o usuário no localStorage
         const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
         const novoUsuario = {
             nome: formData.nome,
             email: formData.email,
-            senha: formData.senha, // Idealmente, criptografar essa senha antes de armazenar
+            senha: formData.senha,
+            cpf: formData.cpf,  // Armazena o CPF
         };
         usuarios.push(novoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -66,6 +98,17 @@ const Cadastrar = () => {
                                 placeholder="Seu Email"
                                 name="email"
                                 value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formCPF">
+                            <Form.Label>CPF</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Seu CPF"
+                                name="cpf"
+                                value={formData.cpf}
                                 onChange={handleChange}
                                 required
                             />

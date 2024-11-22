@@ -26,7 +26,7 @@ const Header = () => {
                     <Nav className="ms-auto">
                         {user ? (
                             <>
-                                <span className="navbar-text text-light me-3">Olá, {user}</span>
+                                <span className="navbar-text text-light me-3">Olá, {user}!</span>
                                 <Button variant="outline-light" onClick={handleLogout}>Logout</Button>
                             </>
                         ) : (
