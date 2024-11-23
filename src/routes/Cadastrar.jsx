@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 
 // Função de validação de CPF
 function validarCPF(strCPF) {
-    strCPF = strCPF.replace(/\D/g, ''); // Remove caracteres não numéricos
+    strCPF = strCPF.replace(/\D/g, '');
     if (strCPF.length !== 11 || /^(\d)\1{10}$/.test(strCPF)) return false;
 
     let soma = 0, resto;
@@ -33,7 +33,7 @@ const Cadastrar = () => {
         email: "",
         senha: "",
         confirmarSenha: "",
-        cpf: "",  // Campo de CPF
+        cpf: "",
     });
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
@@ -63,15 +63,15 @@ const Cadastrar = () => {
             nome: formData.nome,
             email: formData.email,
             senha: formData.senha,
-            cpf: formData.cpf,  // Armazena o CPF
+            cpf: formData.cpf,
         };
         usuarios.push(novoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-        // Autentica o usuário automaticamente
+        
         login(formData.nome);
 
-        navigate("/"); // Redireciona para a página inicial
+        navigate("/");
     };
 
     return (

@@ -155,7 +155,7 @@ const Sobre = () => {
         </Container>
       </section>
 
-      {/* Call to Action */}
+      {/* Botao com informacoes */}
       <section className="bg-success text-light py-5">
         <Container>
           <Row>
@@ -168,7 +168,7 @@ const Sobre = () => {
               <Button
                 variant="light"
                 size="lg"
-                href="/Global%20Solution%20-%20Software%20&%20Total%20Experience%20Design.pdf"
+                href="src\assets\GlobalSolutionSoftware&TotalExperienceDesign.pdf"
                 target="_blank"
               >
                 Saiba Mais

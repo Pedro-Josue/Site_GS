@@ -8,7 +8,7 @@ import Home from './routes/Home.jsx';
 import Login from './routes/Login.jsx';
 import Sobre from './routes/Sobre.jsx';
 import Solucao from './routes/Solucao.jsx';
-import { AuthProvider } from './context/AuthContext'; // Importe o AuthProvider
+import { AuthProvider } from './context/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* Envolva o RouterProvider com o AuthProvider */}
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>

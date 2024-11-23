@@ -180,12 +180,6 @@ const Solucao = () => {
         </Col>
       </Row>
 
-      {/* Chamada para Ação */}
-      <div className="text-center mt-5">
-        <Button variant="success" size="lg">
-          Saiba Mais Sobre Nossa Solução
-        </Button>
-      </div>
     </Container>
   );
 };

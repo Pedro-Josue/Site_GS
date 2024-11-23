@@ -1,5 +1,4 @@
 import React from "react";
-// Importe os ícones que você precisa do React Icons
 import { BsFacebook, BsYoutube, BsInstagram, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
