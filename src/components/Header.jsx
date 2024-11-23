@@ -13,7 +13,7 @@ const Header = () => {
     };
 
     return (
-        <Navbar expand="lg" bg="success" variant="dark">
+        <Navbar style={{ backgroundColor: "#59b16b" }} expand="lg" variant="dark">
             <Container>
                 <Navbar.Brand as={Link} to="/">Energia Solar</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

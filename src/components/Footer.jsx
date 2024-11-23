@@ -4,7 +4,7 @@ import { BsFacebook, BsYoutube, BsInstagram, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="bg-success text-light pt-5">
+    <footer style={{ backgroundColor: "#59b16b" }} className="text-light pt-5">
       <div className="container px-5">
         <div className="row">
           <div className="col-6 col-lg-4">
@@ -43,7 +43,7 @@ const Footer = () => {
             <h4>Nossas Redes Sociais</h4>
             <div className="social-media pt-2">
               <a href="#" className="text-light fs-2 me-3"><BsFacebook /></a>
-              <a href="#" className="text-light fs-2 me-3"><BsYoutube /></a>
+              <a href="https://www.youtube.com/watch?v=3aUK81hJKEY" target="_blank" className="text-light fs-2 me-3"><BsYoutube /></a>
               <a href="#" className="text-light fs-2 me-3"><BsInstagram /></a>
               <a href="#" className="text-light fs-2"><BsLinkedin /></a>
             </div>
