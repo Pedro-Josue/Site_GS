@@ -59,7 +59,7 @@ const Sobre = () => {
             <Col md={6}>
               <h2 className="text-success">O Problema</h2>
               <p>
-                Cerca de **13% da população mundial** ainda não tem acesso à eletricidade. Além disso, 
+                Cerca de 13% da população mundial ainda não tem acesso à eletricidade. Além disso, 
                 mais de 80% da energia consumida globalmente é derivada de combustíveis fósseis, 
                 responsáveis por 75% das emissões de gases de efeito estufa.
               </p>
